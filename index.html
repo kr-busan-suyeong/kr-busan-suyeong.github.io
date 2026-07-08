@@ -267,6 +267,42 @@ body { padding-top: var(--cg-strip-h); }
 .cg-colophon-note { margin: 4px 0 0; color: #9a9aa8; }
 @media (max-width: 640px) { .cg-strip-label { display: none; } }
 @media (prefers-reduced-motion: reduce) { .cg-skip { transition: none; } }
+
+/* ---- Mobile reading view (touch / small screens) ------------------------------------- */
+/* The immersive per-구 template is desktop-only. On touch devices and narrow screens the
+   .cg-read view is shown instead — it uses only safe, high-contrast CSS so text can never
+   go invisible on iOS Safari (no background-clip:text, backdrop-filter, 100vh, :hover-gated
+   reveals, or mix-blend-mode). Fully namespaced + generator-controlled. */
+.cg-read { display: none; }
+@media (hover: none) and (pointer: coarse), (max-width: 768px) {
+  /* Neutralise immersive templates that lock scrolling / lock the viewport on <body>. */
+  html, body { overflow-x: hidden !important; overflow-y: auto !important; height: auto !important;
+    min-height: 0 !important; position: static !important; touch-action: auto !important; background: #ffffff !important; }
+  .cg-immersive { display: none !important; }
+  .cg-read { display: block; }
+}
+.cg-read { max-width: 720px; margin: 0 auto; padding: 20px 18px 8px;
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  color: #17171f; background: #ffffff; line-height: 1.75; -webkit-text-size-adjust: 100%; }
+.cg-read * { max-width: 100%; box-sizing: border-box; }
+.cg-read-head { padding: 8px 0 16px; border-bottom: 3px solid var(--cg-ra, #2d5bff); margin-bottom: 20px; }
+.cg-read-eyebrow { margin: 0 0 4px; color: var(--cg-rd, #333); font-weight: 700; font-size: 15px; letter-spacing: .02em; }
+.cg-read-head h1 { margin: 0; font-size: clamp(30px, 8vw, 40px); line-height: 1.15; color: #14141c; font-weight: 800; }
+.cg-read h2 { font-size: 20px; margin: 30px 0 10px; padding-left: 11px; color: #14141c; font-weight: 700;
+  border-left: 5px solid var(--cg-ra, #2d5bff); }
+.cg-read p { margin: 0 0 12px; font-size: 17px; color: #23232d; }
+.cg-read section { margin: 0; }
+.cg-read ul { margin: 8px 0 0; padding-left: 20px; }
+.cg-read li { margin: 8px 0; font-size: 16px; color: #23232d; }
+.cg-read li strong { color: #111119; font-weight: 700; }
+.cg-read .facts, .cg-read .symbols { list-style: none; padding: 14px 16px; margin: 8px 0 0;
+  background: #f5f6fa; border: 1px solid #e6e8f0; border-radius: 12px; }
+.cg-read .faq details { border: 1px solid #e6e8f0; border-radius: 10px; padding: 10px 14px; margin: 8px 0; background: #fbfbfd; }
+.cg-read .faq summary { cursor: pointer; font-weight: 700; font-size: 16px; color: #14141c; }
+.cg-read .faq details p { margin: 8px 0 2px; color: #44454f; }
+.cg-read a { color: #1a46d8; word-break: break-word; }
+.cg-read .sources { font-size: 14px; color: #55565f; }
+.cg-read .sources a { color: #3a5bd0; }
 </style>
 </head>
 <body>
@@ -275,6 +311,7 @@ body { padding-top: var(--cg-strip-h); }
     <span class="cg-ad">AD</span><span class="cg-strip-label">후원 파트너</span><span class="cg-strip-list"><a class="cg-strip-item" href="https://ikoffices.com" rel="sponsored noopener" target="_blank">일광오피스</a><span class="cg-strip-dot" aria-hidden="true">·</span><a class="cg-strip-item" href="https://mobidicsaju.com" rel="sponsored noopener" target="_blank">모비딕 사주</a><span class="cg-strip-dot" aria-hidden="true">·</span><a class="cg-strip-item" href="https://www.foodskorea.com/" rel="sponsored noopener" target="_blank">전국팔도 식품도감</a><span class="cg-strip-dot" aria-hidden="true">·</span><a class="cg-strip-item" href="https://myflowmakers.com" rel="sponsored noopener" target="_blank">마이플로우메이커스</a><span class="cg-strip-dot" aria-hidden="true">·</span><a class="cg-strip-item" href="https://yeonlijispace.com" rel="sponsored noopener" target="_blank">연리지 인테리어</a><span class="cg-strip-dot" aria-hidden="true">·</span><a class="cg-strip-item" href="https://yeonliji.io" rel="sponsored noopener" target="_blank">주식회사 연리지</a><span class="cg-strip-dot" aria-hidden="true">·</span><span class="cg-strip-item cg-strip-text">세무·법률 자문</span></span>
   </aside>
   <div id="cg-main" tabindex="-1"></div>
+  <div class="cg-immersive">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&display=swap');
 
@@ -741,6 +778,130 @@ body { padding-top: var(--cg-strip-h); }
   });
 })();
 </script>
+  </div>
+  <main class="cg-read" id="cg-read" role="main" lang="ko" style="--cg-ra:#ab2ba9;--cg-ra2:#d03978;--cg-rd:#571956">
+    <header class="cg-read-head">
+      <p class="cg-read-eyebrow">부산광역시</p>
+      <h1>수영구</h1>
+    </header>
+    <div class="cg-read-body">
+      <section id="r-intro">
+        <h2>지역 소개</h2>
+        <p>수영구는 광안대교와 광안리해수욕장으로 대표되는 부산의 대표 해양·야경 관광지입니다. 구 이름은 조선시대 이곳에 자리했던 경상좌도 수군절도사영(좌수영)에서 따온 것으로, &#x27;수군&#x27;의 물 수(水)와 &#x27;절도사영&#x27;의 진영 영(營)을 합쳐 &#x27;수영&#x27;이라 불렀습니다. 1.4km에 이르는 광안리 백사장과 밤마다 색을 바꾸는 광안대교 조명, 그리고 국내 최초의 수변공원인 민락수변공원이 어우러져 사시사철 관광객과 시민의 발길이 끊이지 않습니다. 매년 가을 이곳 바다를 배경으로 부산불꽃축제가 열리고, 봄에는 좌수영어방놀이에서 비롯된 광안리 어방축제가 펼쳐집니다. 와이어 공장을 개조한 복합문화공간 F1963과 망미동 비콘그라운드처럼 옛 산업시설을 문화공간으로 되살린 명소들도 수영구만의 개성을 더합니다.</p>
+      </section>
+      <section id="r-facts">
+        <h2>주요 통계</h2>
+        <ul class="facts">
+          <li>인구: 약 175,095명 (2021)</li>
+          <li>면적: 10.2 km²</li>
+          <li>신설: 1995-03-01</li>
+        </ul>
+      </section>
+      <section id="r-history">
+        <h2>역사</h2>
+        <p>수영구 일대는 조선시대 경상좌도 수군의 본영인 좌수영이 설치되면서 남해안 방어의 군사 중심지로 기능했습니다. 좌수영성지와 그 남문, 홍예문 유적이 지금도 수영사적공원에 남아 당시 수군 진영의 흔적을 전하며, 임진왜란 때 성을 지키다 순절한 의로운 이들을 기리는 25의용단이 함께 자리합니다. 근대에 이르러 이 지역은 부산진구를 거쳐 1975년 부산 남구로 편입되었습니다. 이후 도시 성장과 인구 증가에 따라 1995년 3월 1일 남구에서 분리되어 오늘의 수영구가 신설되었습니다. 좌수영에서 전승된 수영야류와 좌수영어방놀이는 각각 1971년과 1978년 국가무형유산으로 지정되어 오늘까지 이어지고 있습니다. 이렇듯 수영구는 수군 진영의 군사 유산과 어촌 공동체의 민속이 겹쳐 쌓인 독특한 역사적 층위를 지닙니다.</p>
+      </section>
+      <section id="r-geography">
+        <h2>지리·자연환경</h2>
+        <p>수영구는 부산 도심에서 남동쪽으로 약 8~12km 떨어진 해안에 자리하며 면적은 약 10.2km²로 부산 자치구 가운데 작은 편에 속합니다. 서쪽으로는 금련산과 황령산 자락이 병풍처럼 구를 감싸고, 동북쪽 경계로는 수영강이 흘러 바다로 빠져나갑니다. 남쪽 해안선은 광안리해수욕장과 민락항, 그리고 광안대교가 건너지르는 수영만을 향해 활짝 열려 있습니다. 황령산 남측 사면과 광안리 백사장 사이에 시가지가 촘촘히 들어서 있어 산과 바다가 가까이 맞닿은 지형을 이룹니다. 금련산에서 들려오던 절의 종소리(연산모종)가 옛 수영팔경의 하나로 꼽혔을 만큼 산세와 해안 경관이 조화를 이룹니다. 수영강 하구와 민락 앞바다는 예로부터 어장이 발달해 좌수영어방놀이 같은 어로 민속이 태어난 배경이 되었습니다.</p>
+      </section>
+      <section id="r-characteristics">
+        <h2>지역 특징</h2>
+        <p>수영구는 약 10km²의 좁은 면적에 17만 명이 넘는 주민이 거주하는 부산의 대표적인 고밀도 주거·관광 복합 지역입니다. 남천동과 광안동 일대에는 아파트 밀집지와 카페거리가 형성되어 있고, 민락·남천 횟촌에는 300여 곳의 횟집이 늘어서 수산·요식업이 지역 경제의 큰 축을 이룹니다. 지방어항인 민락항을 중심으로 한 수산업과 함께, KBS 부산방송총국과 부산문화방송(MBC) 등 방송·언론 기관이 자리해 미디어 산업의 거점 역할도 합니다. 와이어 로프 제조로 성장한 고려제강이 옛 공장 부지를 문화공간 F1963으로 전환한 사례는 산업과 문화가 공존하는 수영구의 성격을 잘 보여줍니다. 관광객이 붐비는 광안리 해변과 조용한 망미동 골목상권이 공존하며, 유동인구가 많은 상업 중심지와 정주형 주거지가 좁은 구역 안에 촘촘히 뒤섞여 있는 것이 특징입니다.</p>
+      </section>
+      <section id="r-landmarks">
+        <h2>대표 명소</h2>
+        <ul>
+          <li><strong>광안리해수욕장</strong> — 총면적 약 8만2천㎡, 길이 1.4km의 백사장을 자랑하는 부산의 대표 해변으로, 카페거리와 횟집이 어우러진 도심 속 해수욕장입니다. 밤이면 광안대교 조명과 어우러진 야경 명소로 국내외 관광객이 즐겨 찾습니다.</li>
+          <li><strong>광안대교</strong> — 수영만을 가로지르는 부산의 상징적 현수교로, 야간에는 매 순간 색을 바꾸는 경관 조명이 장관을 이룹니다. 다리와 바다, 도심 야경이 겹쳐 보이는 광안리 앞바다는 부산 최고의 낭만 명소로 꼽힙니다.</li>
+          <li><strong>민락수변공원</strong> — 길이 543m, 너비 39m 규모로 조성된 국내 최초의 수변공원으로, 광안대교를 배경으로 한 배 모형 야외무대가 설치되어 있습니다. 바다를 바로 앞에 두고 휴식과 각종 행사를 즐길 수 있어 시민들의 대표 여가 공간입니다.</li>
+          <li><strong>F1963</strong> — 고려제강의 옛 와이어 로프 공장을 리모델링해 만든 복합문화공간으로, 공연장·전시장·서점·카페가 함께 들어서 있습니다. 산업 유산을 예술과 미식의 공간으로 되살린 도시재생의 대표 사례입니다.</li>
+        </ul>
+      </section>
+      <section id="r-heritage">
+        <h2>문화유산·문화시설</h2>
+        <ul>
+          <li><strong>수영야류</strong> — 좌수영 지역에서 정월 대보름 무렵 전승되던 탈놀음으로 1971년 국가무형유산으로 지정되었습니다. 양반을 풍자하는 과장으로 구성된 부산 지역 대표 민속극입니다.</li>
+          <li><strong>좌수영어방놀이</strong> — 좌수영 어촌에서 후릿그물로 고기를 잡던 어로 과정을 놀이와 노동요로 엮은 민속으로 1978년 국가무형유산으로 지정되었습니다. 이 어방놀이가 오늘날 매년 5월 광안리 어방축제의 뿌리가 되었습니다.</li>
+          <li><strong>수영사적공원과 25의용단</strong> — 경상좌수영 본영이 있던 자리에 조성된 공원으로, 좌수영성지 성벽과 홍예문, 안용복 장군을 모신 수강사, 최영 장군 사당 무민사가 남아 있습니다. 임진왜란 때 성을 지키다 순절한 스물다섯 의인을 기리는 25의용단도 이곳에 자리합니다.</li>
+          <li><strong>수영성지 곰솔과 푸조나무</strong> — 수영사적공원 안에는 수백 년 수영성을 지켜 온 천연기념물 곰솔나무(제270호)와 푸조나무가 자리합니다. 400년이 넘은 이 노거수들은 지역의 안녕을 지키는 당산목으로 신성시되어 왔습니다.</li>
+        </ul>
+      </section>
+      <section id="r-nature">
+        <h2>자연·휴식</h2>
+        <ul>
+          <li><strong>금련산</strong> — 수영구 서쪽에 솟은 산으로 절에서 울리는 종소리 &#x27;연산모종&#x27;이 옛 수영팔경의 하나로 꼽혔습니다. 청소년수련원과 약수터, 등산로가 갖춰져 도심 가까이에서 가벼운 산행과 휴식을 즐길 수 있습니다.</li>
+          <li><strong>황령산 봉수대</strong> — 수영구와 인접 구에 걸친 황령산 정상에는 조선 세종 때 설치된 군사 통신시설 봉수대가 복원되어 있습니다. 부산 시가지와 광안대교, 해운대 앞바다까지 한눈에 담기는 야경·해돋이 명소로 유명합니다.</li>
+          <li><strong>광안리 해변테마거리</strong> — 광안리 백사장을 따라 조성된 산책과 문화의 거리로, 야외무대와 조형물, 카페가 이어집니다. 부산불꽃축제와 어방축제 등 대형 행사가 열리는 열린 공간이기도 합니다.</li>
+          <li><strong>망미동 비콘그라운드와 골목상권</strong> — 부산항을 상징하는 컨테이너를 활용해 조성한 복합문화시설 비콘그라운드와 맛집·카페가 늘어선 망미골목이 어우러진 지역입니다. 관광지의 번잡함에서 벗어나 여유롭게 걷기 좋은 도심 쉼터로 사랑받습니다.</li>
+        </ul>
+      </section>
+      <section id="r-transport">
+        <h2>교통</h2>
+        <p>수영구는 부산 도시철도 2호선과 3호선이 지나며, 두 노선이 만나는 수영역이 지역 교통의 중심 환승 거점 역할을 합니다. 2호선은 구를 동서로 관통하며 민락역·수영역·광안역·금련산역·남천역을 두어 광안리 해변과 남천동 주거지로의 접근을 돕습니다. 3호선은 수영역에서 갈라져 망미역으로 이어지며 병무청 등 관공서 방면 이동을 담당합니다. 광안대교가 수영만을 가로질러 해운대와 남구를 잇는 광역 간선축을 형성하고, 해안을 따라 이어진 광안해변로가 관광 동선을 연결합니다. 광안리 해변과 민락수변공원은 지하철역에서 도보로 닿을 수 있어 대중교통만으로도 주요 명소를 어렵지 않게 둘러볼 수 있습니다.</p>
+      </section>
+      <section id="r-symbols">
+        <h2>지역 상징</h2>
+        <ul class="symbols">
+          <li>구화(꽃): 함박꽃</li>
+          <li>구목(나무): 곰솔나무</li>
+          <li>구조(새): 동박새</li>
+        </ul>
+      </section>
+      <section id="r-faq">
+        <h2>자주 묻는 질문</h2>
+        <div class="faq">
+          <details>
+            <summary>수영구라는 이름은 어디서 유래했나요?</summary>
+            <p>조선시대 이곳에 있던 경상좌도 수군절도사영(좌수영)에서 유래했습니다. &#x27;수군&#x27;의 수(水)와 &#x27;절도사영&#x27;의 영(營)을 합쳐 &#x27;수영&#x27;이 되었습니다.</p>
+          </details>
+          <details>
+            <summary>수영구는 언제 별도의 자치구가 되었나요?</summary>
+            <p>1975년 부산 남구에 속해 있다가, 1995년 3월 1일 남구에서 분리되어 수영구로 신설되었습니다.</p>
+          </details>
+          <details>
+            <summary>광안리해수욕장과 광안대교 야경을 보려면 어디로 가야 하나요?</summary>
+            <p>지하철 2호선 광안역이나 금련산역에서 내려 해변으로 걸어가면 됩니다. 민락수변공원 방면에서 보면 광안대교와 야경을 정면으로 감상할 수 있습니다.</p>
+          </details>
+          <details>
+            <summary>부산불꽃축제와 어방축제는 수영구에서 열리나요?</summary>
+            <p>네. 부산불꽃축제는 광안리 앞바다와 광안대교를 배경으로 가을에 열리며, 봄에는 좌수영어방놀이에서 비롯된 광안리 어방축제가 열립니다.</p>
+          </details>
+          <details>
+            <summary>수영구의 대표 문화유산에는 어떤 것이 있나요?</summary>
+            <p>국가무형유산인 수영야류와 좌수영어방놀이, 그리고 수영사적공원의 좌수영성지·25의용단과 천연기념물 곰솔나무가 대표적입니다.</p>
+          </details>
+          <details>
+            <summary>회를 먹으려면 수영구 어디로 가면 좋나요?</summary>
+            <p>민락항 주변의 민락 횟촌과 남천동 일대에 300여 곳의 횟집이 모여 있어 바다를 보며 신선한 회를 즐길 수 있습니다.</p>
+          </details>
+        </div>
+      </section>
+      <section id="r-links">
+        <h2>공식 링크</h2>
+        <ul>
+          <li><a href="https://www.suyeong.go.kr/index.suyeong" rel="noopener">부산광역시 수영구청 공식 홈페이지</a></li>
+          <li><a href="https://www.suyeong.go.kr/tour/index.suyeong" rel="noopener">수영구 문화관광</a></li>
+        </ul>
+      </section>
+      <section id="r-github">
+        <h2>GitHub</h2>
+        <ul>
+          <li><a href="https://github.com/kr-busan-suyeong" rel="noopener">GitHub 조직: kr-busan-suyeong</a></li>
+          <li><a href="https://github.com/kr-busan-suyeong/kr-busan-suyeong.github.io" rel="noopener">이 사이트 저장소</a></li>
+        </ul>
+      </section>
+      <section id="r-sources">
+        <h2>출처</h2>
+        <ul class="sources">
+          <li><a href="https://ko.wikipedia.org/wiki/%EC%88%98%EC%98%81%EA%B5%AC" rel="noopener">수영구 - 위키백과</a> (조회 2026-07-08)</li>
+          <li><a href="https://www.suyeong.go.kr/index.suyeong" rel="noopener">부산광역시 수영구청 공식 홈페이지</a> (조회 2026-07-08)</li>
+          <li><a href="https://encykorea.aks.ac.kr/Article/E0067008" rel="noopener">부산광역시 수영구 - 한국민족문화대백과사전</a> (조회 2026-07-08)</li>
+          <li><a href="https://ko.wikipedia.org/wiki/%EA%B4%91%EC%95%88%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5" rel="noopener">광안리해수욕장 - 위키백과</a> (조회 2026-07-08)</li>
+        </ul>
+      </section>
+    </div>
+  </main>
   <aside class="cg-sponsors" aria-label="후원 파트너 상세">
     <p class="cg-spon-head"><span class="cg-ad">AD</span> 후원 파트너 <small>이 링크는 광고이며 편집상의 추천이 아닙니다 (rel=&quot;sponsored&quot;).</small></p>
     <ul class="cg-spon-grid">
